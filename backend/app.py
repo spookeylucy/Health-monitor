@@ -130,6 +130,12 @@ def predict():
 def health_check():
     return jsonify({'status': 'healthy', 'model_loaded': model is not None})
 
+@app.route('/')
+def home():
+    return "✅ AI Health Monitor Backend is running!"
+
+
+
 if __name__ == '__main__':
     print("Starting AI Health Monitoring Backend...")
     load_model()
