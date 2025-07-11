@@ -1,0 +1,22 @@
+services:
+  - type: web
+    name: health-monitor-frontend
+    env: node
+    buildCommand: npm install && npm run build
+    startCommand: npm run preview
+    staticPublishPath: dist
+    buildFilter:
+      paths:
+        - package.json
+        - src/**/*
+        - vite.config.ts
+
+  - type: web
+    name: health-monitor-backend
+    env: python
+    buildCommand: pip install -r backend/requirements.txt
+    startCommand: python backend/app.py
+    buildFilter:
+      paths:
+        - backend/**
+        - backend/requirements.txt
