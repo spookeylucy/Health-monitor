@@ -2,7 +2,6 @@ services:
   - type: web
     name: health-monitor-frontend
     env: node
-    plan: free
     buildCommand: npm install && npm run build
     startCommand: npm run preview
     staticPublishPath: dist
@@ -15,10 +14,9 @@ services:
   - type: web
     name: health-monitor-backend
     env: python
-    plan: free
-    buildCommand: pip install -r backend/requirements.txt
+    buildCommand: pip install -r requirements.txt
     startCommand: python backend/app.py
     buildFilter:
       paths:
         - backend/**
-        - backend/requirements.txt
+        - requirements.txt
