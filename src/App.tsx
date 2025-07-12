@@ -58,7 +58,7 @@ function App() {
 
     try {
       // Replace with your deployed backend URL
-      const response = await fetch('https://health-monitor-4.onrender.com/', {
+      const response = await fetch('https://health-monitor-4.onrender.com/predict', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
